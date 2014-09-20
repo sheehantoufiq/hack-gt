@@ -1,0 +1,23 @@
+<div ng-controller="MyController">
+	<h2>New Crowdchat</h2>
+
+	<form class="form-inline" ng-submit="createCrowdchat()">
+		<p><h3>http://crowdchat.io/ <input class="form-control" ng-model="crowdchat.name" placeholder="yourcrowdchat"></input></h3></p>
+
+		<h3>Theme: </h3>
+
+		<label class="checkbox">
+			Accept Donations? <input type="checkbox" id="inlineCheckbox1" value="donate">
+		</label>
+		<br>
+		<label class="radio-inline">
+		  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option3"> Public
+		</label>
+		<label class="radio-inline">
+		  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="private"> Private
+		</label>
+		<br>
+		<br>
+		<button type="submit" class="btn btn-info btn-lg"><i class="fa fa-twitter fa-lg"></i> Sign In and Create</button>
+	</form>
+</div>

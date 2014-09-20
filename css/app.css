@@ -28,3 +28,14 @@
   content: "";
   padding: 0;
 }
+
+.form-signin input[id="edit"] {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -webkit-user-select: none;
+}

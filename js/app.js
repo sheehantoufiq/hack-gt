@@ -2,15 +2,20 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+var app = angular.module('CrowdchatApp', [
   'ngRoute',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  'firebase',
+  'CrowdchatApp.filters',
+  'CrowdchatApp.services',
+  'CrowdchatApp.directives',
+  'CrowdchatApp.controllers'
+]);
+app.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/', {templateUrl: 'partials/splash.html', controller: 'MyController'});
+  $routeProvider.when('/create', {templateUrl: 'partials/create.html', controller: 'MyController'});
+  $routeProvider.when('/trending', {templateUrl: 'partials/trending.html', controller: 'MyController'});
+  $routeProvider.when('/:name', {templateUrl: 'partials/crowdchat.html', controller: 'ChatroomController'});
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
+
+app.constant('FIREBASE_URL', 'https://crowdchat-test.firebaseio.com/');

@@ -1,0 +1,11 @@
+<h1>@{{ crowdchats.name }}</h1>
+
+<div ng-controller="ChatroomController">
+	<ul style="">
+		<li ng-repeat="message in messages">{{message.from}}: {{message.content}}</li>
+	</ul>
+  <form class="form-inline" ng-submit="addMessage()">
+    <input class="form-control" type="text" ng-model="message.content"/> 
+    <button type="submit" class="btn btn-default btn-lg">Send Message</button>
+	</form>
+</div>
