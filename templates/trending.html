@@ -1,0 +1,29 @@
+<div style="margin-top:80px;">
+	<div class="bar bar-subheader">
+	  <h2 class="title">@crowdchats near you</h2>
+	</div>
+</div>
+
+<div style="margin-top:-30px;">
+	<div class="bar bar-subheader item-input-inset">
+    <label class="item-input-wrapper">
+    	<i class="icon ion-ios7-search placeholder-icon"></i>
+      <input type="search" placeholder="Search crowdchats...">
+    </label>
+    <button class="button button-clear" style="margin-top:-6px;">
+      Cancel
+    </button>
+  </div>
+
+  <div style="margin-top:40px;">
+  	<ion-scroll direction="y" style="height:1136px;" has-bouncing="true">
+			<div class="list">
+			    <a ng-repeat="(crowdchatId, crowdchat) in crowdchats" class="item item-thumbnail-left" href="#/{{ crowdchat.name }}">
+			      <img src="img/cover.jpg" class="img-circle">
+			      <h2>@{{ crowdchat.name }}</h2>
+			      <p>0 miles away</p>
+			    </a>
+			</div>
+		<ion-scroll>
+	</div>
+</div>

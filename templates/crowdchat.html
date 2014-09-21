@@ -1,0 +1,27 @@
+<div style="margin-top:80px;">
+
+	<div class="bar bar-subheader">
+	  <h2 class="title">@{{ crowdchats.name }}</h2>
+	</div>
+</div>
+
+<div ng-controller="ChatroomController">
+	  <ion-scroll direction="y" style="height:1136px;">
+		  <div class="list">
+		    <div ng-repeat="message in messages" class="item item-avatar">
+		      <img src="img/avatars/avatar_{{ message.avatar }}.png">
+		      <p>{{message.from}}:</p>
+		      <h3>{{message.content}}</h3>
+		    </div>
+			</div>
+		</ion-scroll>
+
+	<div class="bar bar-footer bar-stable item-input-inset">
+	  <label class="item-input-wrapper">
+	    <input type="text" ng-model="message.content" placeholder="Give a shoutout in @{{ crowdchats.name }}...">
+	  </label>
+	  <button ng-click="addMessage()" class="button button-clear">
+	    Send
+	  </button>
+	</div>
+</div>
